@@ -1,0 +1,51 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: "2020-04-24T18:47:32Z"
+  labels:
+    app: ocpythonflask
+  name: ocpythonflask
+  namespace: flask1
+  resourceVersion: "23447549"
+  selfLink: /apis/build.openshift.io/v1/namespaces/flask1/buildconfigs/ocpythonflask
+  uid: 2ec49835-774b-495e-8a04-9a5d94552cbf
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: ocpythonflask:latest
+  postCommit:
+    command:
+    - pep8
+    - app.py
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: https://github.com/jjasghar/oc_python_flask
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: python:3.6
+        namespace: openshift
+    type: Source
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - github:
+      secret: Dl51Rl22AMdeF4zo4Lev
+    type: GitHub
+  - generic:
+      secret: zgOS5yYu21j0M3m6THLo
+    type: Generic
+  - type: ConfigChange
+  - imageChange:
+      lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/python@sha256:4ce4f00aeee0b987e768ef3c6f4bc03176e1c0a820469e138036e04778fa6336
+    type: ImageChange
+status:
+  lastVersion: 8

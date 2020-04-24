@@ -1,0 +1,107 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: "2020-04-24T18:47:32Z"
+  generation: 9
+  labels:
+    app: ocpythonflask
+  name: ocpythonflask
+  namespace: flask1
+  resourceVersion: "23447931"
+  selfLink: /apis/apps.openshift.io/v1/namespaces/flask1/deploymentconfigs/ocpythonflask
+  uid: 3cc153e8-1775-41ef-8747-f70d645a2c3f
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    app: ocpythonflask
+    deploymentconfig: ocpythonflask
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftNewApp
+      creationTimestamp: null
+      labels:
+        app: ocpythonflask
+        deploymentconfig: ocpythonflask
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/flask1/ocpythonflask@sha256:918eb5a06e8e4ce7cc61aaf40f71b308f2e8cd564c4d6d096f117df1c2088f58
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            httpHeaders:
+            - name: Custom-Header
+              value: Awesome
+            path: /healthz
+            port: 5000
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: ocpythonflask
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+  - type: ConfigChange
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - ocpythonflask
+      from:
+        kind: ImageStreamTag
+        name: ocpythonflask:latest
+        namespace: flask1
+      lastTriggeredImage: image-registry.openshift-image-registry.svc:5000/flask1/ocpythonflask@sha256:918eb5a06e8e4ce7cc61aaf40f71b308f2e8cd564c4d6d096f117df1c2088f58
+    type: ImageChange
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2020-04-24T20:26:42Z"
+    lastUpdateTime: "2020-04-24T20:26:42Z"
+    message: Deployment config has minimum availability.
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2020-04-24T21:24:17Z"
+    lastUpdateTime: "2020-04-24T21:24:19Z"
+    message: replication controller "ocpythonflask-8" successfully rolled out
+    reason: NewReplicationControllerAvailable
+    status: "True"
+    type: Progressing
+  details:
+    causes:
+    - imageTrigger:
+        from:
+          kind: DockerImage
+          name: image-registry.openshift-image-registry.svc:5000/flask1/ocpythonflask@sha256:918eb5a06e8e4ce7cc61aaf40f71b308f2e8cd564c4d6d096f117df1c2088f58
+      type: ImageChange
+    message: image change
+  latestVersion: 8
+  observedGeneration: 9
+  readyReplicas: 1
+  replicas: 1
+  unavailableReplicas: 0
+  updatedReplicas: 1
