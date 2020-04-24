@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+echo "---> Installing application source"
+cp -Rf /tmp/src/. ./
+echo "---> Installing pep8"
+pip install pep8
+echo "---> Running pep8"
+pep8 app.py
