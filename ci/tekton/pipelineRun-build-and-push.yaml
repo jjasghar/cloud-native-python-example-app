@@ -1,0 +1,16 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: kaniko-test-pipeline-run
+spec:
+  serviceAccountName: build-bot
+  pipelineRef:
+    name: kaniko-test-pipeline
+  params:
+  - name: image
+    value: jjasghar/oc-python-flask:latest
+  workspaces:
+  - name: shared-workspace
+    persistentvolumeclaim:
+      claimName: kaniko-source-pvc

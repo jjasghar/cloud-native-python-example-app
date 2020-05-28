@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: oc-python-git
+spec:
+  type: git
+  params:
+    - name: url
+      value: https://github.com/jjasghar/oc_python_flask.git
+    - name: revision
+      value: master
