@@ -4,6 +4,11 @@
 
 We wanted to create a demo flask app to work inside of OpenShift
 
+## Prow
+
+I have a prow instance monitoring this now:
+<http://52.116.51.146:30302/>
+
 ```text
 Copyright:: 2019- IBM, Inc
 
