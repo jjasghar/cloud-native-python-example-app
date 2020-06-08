@@ -2,7 +2,14 @@
 
 ## Scope
 
-We wanted to create a demo flask app to work inside of OpenShift
+We wanted to create a demo flask app to work on k8s, and OpenShift.
+
+## Prow
+
+I have a prow instance monitoring this now:
+<http://52.116.51.146:30302/>
+
+Trying to get it to do my sizing!
 
 ```text
 Copyright:: 2019- IBM, Inc
