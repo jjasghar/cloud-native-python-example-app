@@ -2,7 +2,7 @@
 
 ## Scope
 
-We wanted to create a demo flask app to work inside of OpenShift
+We wanted to create a demo flask app to work on k8s, and OpenShift.
 
 ## Prow
 
