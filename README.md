@@ -10,9 +10,15 @@ I have a prow instance monitoring this now:
 <http://52.116.51.146:30302/>
 
 The [plugins](http://52.116.51.146:30302/plugins) enabled are:
-- size
+- approve
 - assign
 - cat
+- hold
+- lgtm
+- shrug
+- size
+- verify-owners
+- wip
 
 ```text
 Copyright:: 2019- IBM, Inc
