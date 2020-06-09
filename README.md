@@ -14,6 +14,8 @@ The [plugins](http://52.116.51.146:30302/plugins) enabled are:
 - assign
 - cat
 
+This is me testing the pre-and-post jobs.
+
 ```text
 Copyright:: 2019- IBM, Inc
 
