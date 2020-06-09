@@ -9,8 +9,10 @@ We wanted to create a demo flask app to work on k8s, and OpenShift.
 I have a prow instance monitoring this now:
 <http://52.116.51.146:30302/>
 
-The plugins enabled are:
+The [plugins](http://52.116.51.146:30302/plugins) enabled are:
 - size
+- assign
+- cat
 
 ```text
 Copyright:: 2019- IBM, Inc
