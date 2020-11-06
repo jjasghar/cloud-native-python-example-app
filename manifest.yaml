@@ -1,0 +1,7 @@
+---
+applications:
+  - name: hellonerds
+    memory: 256M
+    instances: 1
+    port: 5000
+    
