@@ -1,0 +1,12 @@
+body,html {
+
+    margin: 0;
+     
+  }
+  
+  .image {
+    background-image: url("../images/IBM_Microbites_MockSite_120820.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height:300vh;
+    }
