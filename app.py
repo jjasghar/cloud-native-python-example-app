@@ -1,12 +1,13 @@
 from flask import Flask
 from flask import Response
+from flask import render_template
 
 app = Flask(__name__)
 
 
-@app.route("/")
-def hello():
-    return "Hello , i can't seem to get 5000 to work."
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 
 @app.route("/healthz")
