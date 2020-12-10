@@ -37,7 +37,7 @@ port = int(os.getenv('PORT', 8080))
 SQLALCHEMY_DATABASE_URI = ("mysql+pymysql://"+ os.getenv('MARIADB_USERNAME')
                             +":"+ os.getenv("MARIADB_PASSWORD")
                             +"@"+ os.getenv("MARIADB_HOST")
-                            +":3306"
+                            +":3222"
                             +"/prometeo")
 
 DB_ENGINE = sqlalchemy.MetaData(SQLALCHEMY_DATABASE_URI).bind
