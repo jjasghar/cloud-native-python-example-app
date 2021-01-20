@@ -7,10 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
- # this is me typing a comment in the application, it's weird that i have to do this.
- # this is me adding another comment trying to figure something out.
-
+    #return render_template("index.html")
+    return "Hello I'm an application!"
+ 
 
 @app.route("/healthz")
 def healthz():
