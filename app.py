@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     #return render_template("index.html")
-    return "This is an OSAD python app."
+    return "This is an Kubecon python app."
  
 
 @app.route("/healthz")
