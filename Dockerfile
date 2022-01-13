@@ -14,7 +14,7 @@ RUN pip install --upgrade pip \
 
 USER 1001
 
-EXPOSE 8080
+EXPOSE 9090
 WORKDIR /opt/microservices/
 
-CMD ["python", "app.py", "8080"]
+CMD ["python", "app.py", "9090"]
