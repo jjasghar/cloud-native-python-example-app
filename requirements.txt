@@ -3,7 +3,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 pep8==1.7.1
-Flask==1.0
+Flask==2.3.2
 gunicorn==19.7.1
 cloudant==2.4.0
 flasgger==0.6.4
